@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: deus
+  name: deus-deployment
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     server: "https://5F91010DF6246621B3275CF388EDA58F.gr7.us-east-1.eks.amazonaws.com"
   project: eugen-belskyi
   source:
-    path: apps/app-1
+    path: root-bundle/apps
     repoURL: https://github.com/eugenbelsky/argo-sandbox.git
     targetRevision: HEAD
   syncPolicy:
