@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: deus
-    server: "https://5F91010DF6246621B3275CF388EDA58F.gr7.us-east-1.eks.amazonaws.com"
+    name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
   project: eugen-belskyi
   source:
     path: apps
@@ -18,3 +18,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
