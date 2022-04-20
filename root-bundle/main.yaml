@@ -11,7 +11,7 @@ spec:
     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
   project: eugen-belskyi
   source:
-    path: apps
+    path: ./apps
     repoURL: https://github.com/eugenbelsky/argo-sandbox.git
     targetRevision: HEAD
   syncPolicy:
