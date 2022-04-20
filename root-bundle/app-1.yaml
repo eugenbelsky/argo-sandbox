@@ -4,11 +4,11 @@ metadata:
   name: deus
   namespace: deus-app-1
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: deus
-      server: 'https://5F91010DF6246621B3275CF388EDA58F.gr7.us-east-1.eks.amazonaws.com'
+    server: "https://5F91010DF6246621B3275CF388EDA58F.gr7.us-east-1.eks.amazonaws.com"
   project: eugen-belskyi
   source:
     path: apps/app-1
