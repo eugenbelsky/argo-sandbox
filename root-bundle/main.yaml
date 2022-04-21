@@ -1,46 +1,46 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: deus-deployment
-#   namespace: argocd
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-# spec:
-#   destination:
-#     namespace: deus
-#     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
-#   project: eugen-belskyi
-#   source:
-#     path: ./apps
-#     repoURL: https://github.com/eugenbelsky/argo-sandbox.git
-#     targetRevision: HEAD
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  labels:
-    argocd.argoproj.io/instance: istio-app
-  name: istio-gateway-2
+  name: deus-deployment
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
+    namespace: deus
     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
-    namespace: istio-system-2
   project: eugen-belskyi
   source:
-    chart: gateway
-    helm:
-      releaseName: gateway
-    repoURL: "https://istio-release.storage.googleapis.com/charts"
-    targetRevision: 1.13.2
+    path: apps
+    repoURL: https://github.com/eugenbelsky/argo-sandbox.git
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   labels:
+#     argocd.argoproj.io/instance: istio-app
+#   name: istio-gateway-2
+#   namespace: argocd
+# spec:
+#   destination:
+#     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
+#     namespace: istio-system-2
+#   project: eugen-belskyi
+#   source:
+#     chart: gateway
+#     helm:
+#       releaseName: gateway
+#     repoURL: "https://istio-release.storage.googleapis.com/charts"
+#     targetRevision: 1.13.2
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
