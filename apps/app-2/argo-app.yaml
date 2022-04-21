@@ -8,6 +8,7 @@ spec:
   source:
     chart: bitnami/postgresql
     repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: "*"
     helm:
       releaseName: postgresql
       valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
