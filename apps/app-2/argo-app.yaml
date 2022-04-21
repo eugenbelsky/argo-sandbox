@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+  namespace: argocd
+spec:
+  project: eugen-belskyi
+  source:
+    chart: bitnami/postgresql
+    repoURL: https://charts.bitnami.com/bitnami
+    helm:
+      releaseName: postgresql
+      valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
+  destination:
+    namespace: deus
+    name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
