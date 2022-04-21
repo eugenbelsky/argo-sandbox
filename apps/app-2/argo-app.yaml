@@ -15,3 +15,9 @@ spec:
   destination:
     namespace: deus
     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
