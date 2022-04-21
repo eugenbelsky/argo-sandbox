@@ -13,6 +13,7 @@ spec:
     path: configs/app-1
     repoURL: https://github.com/eugenbelsky/argo-sandbox.git
     targetRevision: HEAD
+  project: eugen-belskyi
   syncPolicy:
     automated:
       prune: true
