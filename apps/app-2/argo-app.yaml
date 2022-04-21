@@ -12,10 +12,13 @@ spec:
     helm:
       releaseName: postgresql
       # valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
-      parameters:
-        - name: commonLabels
-          value:
-            foo: bar
+      # parameters:
+      #   - name: commonLabels
+      #     value:
+      #       foo: bar
+      values: |
+        commonLabels:
+          foo: bar
   destination:
     namespace: deus
     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
