@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgresql
+  name: postgresql-helm
   namespace: argocd
 spec:
   project: eugen-belskyi
@@ -10,7 +10,7 @@ spec:
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: "*"
     helm:
-      releaseName: postgresql
+      releaseName: postgresql-helm
       # valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
       # parameters:
       #   - name: commonLabels
