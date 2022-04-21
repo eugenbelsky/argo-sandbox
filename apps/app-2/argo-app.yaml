@@ -6,7 +6,7 @@ metadata:
 spec:
   project: eugen-belskyi
   source:
-    chart: bitnami/postgresql
+    chart: postgresql
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: "*"
     helm:
