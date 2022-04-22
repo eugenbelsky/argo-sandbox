@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: pre-hook-
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: pre-hook
+          image: busybox
+          command:
+            - "wget"
+            - "-O-"
+            - "google.com"
+      restartPolicy: Never
+  backoffLimit: 2
