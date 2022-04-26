@@ -19,5 +19,6 @@ spec:
         - image: nginx:alpine
           name: nginx
           command:
-            - "sleep 60"
+            - "/bin/sh"
+          args: ["-c", "sleep 60"]
 status: {}
