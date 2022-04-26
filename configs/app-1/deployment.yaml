@@ -10,7 +10,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: app-1
+      app: app-1p
   strategy: {}
   template:
     metadata:
@@ -21,5 +21,5 @@ spec:
         - image: nginx:alpine
           name: nginx
           command:
-            - "/bin/sh -c sleep 2000"
+            - "sleep 2000"
 status: {}
