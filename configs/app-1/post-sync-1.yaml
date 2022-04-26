@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/sync-wave: "2"
-    # argocd.argoproj.io/hook-delete-policy: HookSucceeded
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
   template:
     spec:
@@ -13,6 +13,6 @@ spec:
         - name: post-hook-1
           image: busybox
           command:
-            - "sleep 2000"
+            - "/bin/sh -c sleep 2000"
       restartPolicy: Never
   backoffLimit: 2
