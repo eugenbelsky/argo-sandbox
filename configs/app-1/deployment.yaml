@@ -21,5 +21,5 @@ spec:
         - image: nginx:alpine
           name: nginx
           command:
-            - "sleep 2000"
+            - "sleep 60"
 status: {}

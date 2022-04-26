@@ -13,6 +13,6 @@ spec:
         - name: post-hook-1
           image: busybox
           command:
-            - "sleep 2000"
+            - "sleep 60"
       restartPolicy: Never
   backoffLimit: 2
