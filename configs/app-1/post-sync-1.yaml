@@ -13,8 +13,6 @@ spec:
         - name: post-hook-1
           image: busybox
           command:
-            - "wget"
-            - "-O-"
-            - "google.com"
+            - "sleep 2000"
       restartPolicy: Never
   backoffLimit: 2
