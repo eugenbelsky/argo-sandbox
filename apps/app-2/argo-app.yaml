@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: postgresql
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "2"
+  # annotations:
+  #   argocd.argoproj.io/sync-wave: "2"
 spec:
   project: eugen-belskyi
   source:
