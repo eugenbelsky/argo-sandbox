@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       containers:
-        - name: post-hook
+        - name: post-hook-2
           image: busybox
           command:
             - "wget"
