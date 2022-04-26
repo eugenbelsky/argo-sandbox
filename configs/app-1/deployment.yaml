@@ -18,6 +18,6 @@ spec:
       containers:
         - image: nginx:alpine
           name: nginx
-          command: "/bin/sh"
+          command: ["/bin/sh"]
           args: ["-c", "sleep 60"]
 status: {}
