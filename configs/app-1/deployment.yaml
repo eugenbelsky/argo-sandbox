@@ -16,6 +16,6 @@ spec:
         app: app-1
     spec:
       containers:
-        - image: nginx
+        - image: nginx:alpine
           name: nginx
 status: {}
