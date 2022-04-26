@@ -13,6 +13,6 @@ spec:
         - name: post-hook-1
           image: busybox
           command: ["/bin/sh"]
-          args: ["-c", "sleep 60"]
+          args: ["-c", "sleep 5"]
       restartPolicy: Never
   backoffLimit: 2
