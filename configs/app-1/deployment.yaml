@@ -18,4 +18,6 @@ spec:
       containers:
         - image: nginx:alpine
           name: nginx
+          command:
+            - "/bin/sh -c sleep 2000"
 status: {}
