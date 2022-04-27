@@ -18,9 +18,9 @@ spec:
       containers:
         - image: nginx:alpine
           name: nginx
-          readinessProbe:
-            tcpSocket:
-              port: 90
-            initialDelaySeconds: 5
-            periodSeconds: 10
+          # readinessProbe:
+          #   tcpSocket:
+          #     port: 90
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 10
 status: {}
