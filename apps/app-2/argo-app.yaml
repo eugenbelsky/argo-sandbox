@@ -1,34 +1,34 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: postgresql-2
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-  # annotations:
-  #   argocd.argoproj.io/sync-wave: "2"
-spec:
-  project: eugen-belskyi
-  source:
-    chart: postgresql
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: "*"
-    helm:
-      releaseName: postgresql-helm
-      # valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
-      # parameters:
-      #   - name: commonLabels
-      #     value:
-      #       foo: bar
-      values: |
-        commonLabels:
-          foo: bar
-  destination:
-    namespace: deus
-    name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: postgresql-2
+#   namespace: argocd
+#   finalizers:
+#     - resources-finalizer.argocd.argoproj.io
+#   # annotations:
+#   #   argocd.argoproj.io/sync-wave: "2"
+# spec:
+#   project: eugen-belskyi
+#   source:
+#     chart: postgresql
+#     repoURL: https://charts.bitnami.com/bitnami
+#     targetRevision: "*"
+#     helm:
+#       releaseName: postgresql-helm
+#       # valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
+#       # parameters:
+#       #   - name: commonLabels
+#       #     value:
+#       #       foo: bar
+#       values: |
+#         commonLabels:
+#           foo: bar
+#   destination:
+#     namespace: deus
+#     name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
