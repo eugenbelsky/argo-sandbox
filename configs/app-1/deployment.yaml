@@ -42,7 +42,7 @@ apiVersion: v1
 metadata:
   name: example-secret
   annotations:
-    avp.kubernetes.io/path: "secret/test-ext"
+    avp.kubernetes.io/path: "secret/data/test-ext"
 type: Opaque
 data:
   password: <password>
