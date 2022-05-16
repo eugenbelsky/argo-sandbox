@@ -11,12 +11,12 @@ spec:
   destination:
     namespace: default
     name: "in-cluster"
-  plugin:
-    name: argocd-vault-plugin
   source:
     path: configs/app-1
     repoURL: https://github.com/eugenbelsky/argo-sandbox.git
     targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin
   project: default
   syncPolicy:
     automated:
