@@ -35,3 +35,15 @@ spec:
           requests:
             memory: 32Mi
             cpu: 5m
+
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: example-secret
+  annotations:
+    avp.kubernetes.io/path: "secret/test-ext"
+type: Opaque
+data:
+  password: <password>
+  username: <username>
