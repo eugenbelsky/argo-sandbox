@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgresql-2
+  name: fluentd
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  project: eugen-belskyi
+  project: default
   source:
-    chart: postgresql
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: "*"
+    chart: pfi-helm-charts/fluentd
+    repoURL: 494495723522.dkr.ecr.us-east-1.amazonaws.com
+    targetRevision: "1.12.4"
     helm:
-      releaseName: postgresql-helm
+      releaseName: fluentd
       # valueFiles: ["values.yaml"] # resolved against source.repoURL and source.path
       # parameters:
       #   - name: commonLabels
@@ -24,8 +24,8 @@ spec:
         commonLabels:
           foo: bar
   destination:
-    namespace: deus
-    name: "arn:aws:eks:us-east-1:494495723522:cluster/eks-lula3ydp"
+    namespace: default
+    name: "in-cluster"
   syncPolicy:
     automated:
       prune: true
